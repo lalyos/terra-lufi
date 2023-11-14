@@ -45,8 +45,9 @@ how to ref a variable
 
 apply with custom variable values (other than default)
 ```
-terraform
+terraform apply -var-file=dev.tfvars
 ```
+but `terraform.tfvars` is used automatically!
 
 ## Console
 
@@ -69,3 +70,28 @@ output "url" {
   value = "http://127.0.0.1:${docker_container.nginx.ports[0].external}"
 }
 ```
+
+See outputs (prevoius apply)
+```
+terraform output
+```
+
+See only specific output:
+```
+terraform output url
+terraform output -raw url
+```
+
+## Poorman's auto open
+```
+terraform apply -auto-approve && open $(terraform output -raw url)
+```
+
+## Separate blocks to files
+
+Common filenames:
+- main.tf
+- variables.tf
+- outputs.tf
+- terraform.tfvars
+
