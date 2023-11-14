@@ -1,11 +1,6 @@
-
-
-
 ## Links
 
-- http://bit.ly/terra-lufi
 - https://registry.terraform.io/browse/providers
-
 
 ## Exercise Docker
 
