@@ -4,3 +4,4 @@ terraform.tfstate.backup
 .terraform.lock.hcl
 terraform.tfstate
 scratch.txt
+azure/terraform.tfvars
