@@ -32,10 +32,8 @@ resource "docker_container" "nginx" {
   }
 }
 
-resource "null_resource" "open" {
-  provisioner "local-exec" {
-    command = "open http://127.0.0.1:${docker_container.nginx.ports[0].external}"
-  }
+output "port" {
+  value = "${docker_container.nginx.ports[0].external}"
 }
 
 output "url" {
