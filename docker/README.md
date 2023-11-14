@@ -1,12 +1,14 @@
 ## Links
 
 - https://registry.terraform.io/browse/providers
+- https://github.com/lalyos/terra-lufi
 
 ## Exercise Docker
 
 ```
 mkdir terra-lufi
 cd $_
+touch main.tf
 terraform init
 ```
 
@@ -45,7 +47,11 @@ how to ref a variable
 
 apply with custom variable values (other than default)
 ```
+terraform apply  -var port=8081 -var tag=latest
 terraform apply -var-file=dev.tfvars
+export TF_VAR_food=tokfozelek
+# equivalent to using `-var food=tokfozelek`
+
 ```
 but `terraform.tfvars` is used automatically!
 
@@ -59,6 +65,8 @@ resource_type.name
 resource_type.name.arg1
 resource_type.name.arg1.subarg
 resource_type.name.list[0].subarg
+
+yamldecode(file("servers.yaml"))
 
 "port is ${var.port}"
 ```

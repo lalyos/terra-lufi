@@ -3,6 +3,31 @@ variable "port" {
   default = 8080
 }
 
+variable "message" {
+  default = <<EOF
+    Hello "World"
+  EOF
+}
+
+variable "servers" {
+  description = "Servers to create"
+  default = [
+    {
+      name = "web-1"
+      type = "fron"
+    },
+    {
+      name = "java-pacal"
+      type = "back"
+    }
+  ]
+}
+
+variable "foods" {
+  description = "wot to lunch"
+  default = ["pizza", "pasta", "salad"]
+}
+
 variable "tag" {
   description = "Version of the image to use"
   default = "latest"

@@ -1,0 +1,5 @@
+servers:
+- name: web
+  type: frontend
+- name: db
+  type: backend
